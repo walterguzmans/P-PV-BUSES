@@ -41,8 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
         android:ems="10"
+        android:hint="Usuario"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
