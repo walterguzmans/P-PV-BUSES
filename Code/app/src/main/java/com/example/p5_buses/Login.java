@@ -2,6 +2,7 @@ package com.example.p5_buses;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -36,10 +37,12 @@ public class Login extends AppCompatActivity {
                 boolean tipousuario = conexion.tipousuario(correo);
                 if (tipousuario) {
                     //ingresar ventana administrador
-                    Toast.makeText(this, "Bienvenido administrador", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Login.this, MenuAdmin.class);
+                    startActivity(intent);
                 } else {
-//ingresar ventana usuario
-                    Toast.makeText(this, "Bienvenido usuario", Toast.LENGTH_SHORT).show();
+                    //ingresar ventana usuario
+                    Intent intent = new Intent(Login.this, MenuUsuario.class);
+                    startActivity(intent);
                 }
             } else {
                 Toast.makeText(this, "credenciales incorrectos", Toast.LENGTH_SHORT).show();

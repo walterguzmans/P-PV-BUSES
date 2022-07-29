@@ -31,7 +31,7 @@ public class Conexion extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         db.execSQL("INSERT OR IGNORE INTO  usuarios  (cedula ,nombre ,apellidos ,email ,usuario ,contraseña ,rol ) Values (70280733,'Keisy','Avalos Artavia','kavalosartavia@gmail.com','Keisy31','Camino123','Administrador')");
-        db.execSQL("INSERT OR IGNORE INTO usuarios (cedula ,nombre ,apellidos ,email ,usuario ,contraseña ,rol) Values (72800744,'Paula','Villegas Mora','pau@gmail.com','Paula01','pau123','Usuario')");
+        db.execSQL("INSERT OR IGNORE INTO usuarios (cedula ,nombre ,apellidos ,email ,usuario ,contraseña ,rol) Values (72809024,'Paula','Villegas Mora','pau@gmail.com','Paula01','pau123','Usuario')");
         db.close();
 
     }
@@ -49,7 +49,7 @@ public class Conexion extends SQLiteOpenHelper {
 
     public boolean tipousuario(String correo) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select  rol  from usuarios where correo=?", new String[]{correo});
+        Cursor cursor = db.rawQuery("select  rol  from usuarios where email=?", new String[]{correo});
 
         if (cursor.moveToFirst()) {
             if (cursor.getString(cursor.getColumnIndexOrThrow("rol")).equals("Administrador"))
