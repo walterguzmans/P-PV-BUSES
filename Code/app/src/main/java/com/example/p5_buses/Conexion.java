@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class Conexion extends SQLiteOpenHelper {
 
     public static final String DBname = "Proyecto.db";
+
     public Conexion(Context context) {
         super(context, "Proyecto.db", null, 1);  //creacion de la base de datos
     }
@@ -16,7 +17,6 @@ public class Conexion extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {  //creacion de tabla usuario
         db.execSQL("create table usuarios(cedula int primary key,nombre text,apellidos text,email text,usuario text,contraseña text,rol text)");
-
 
     }
 
@@ -27,55 +27,37 @@ public class Conexion extends SQLiteOpenHelper {
 
     }
 
-
     public void registrousuarios() {  // insercion de usuarios
         SQLiteDatabase db = this.getReadableDatabase();
 
         db.execSQL("INSERT OR IGNORE INTO  usuarios  (cedula ,nombre ,apellidos ,email ,usuario ,contraseña ,rol ) Values (70280733,'Keisy','Avalos Artavia','kavalosartavia@gmail.com','Keisy31','Camino123','Administrador')");
-        db.execSQL("INSERT OR IGNORE INTO usuarios (cedula ,nombre ,apellidos ,email ,usuario ,contraseña ,rol) Values (72800744,'Rosa','Hernandez Trejos','Rosamaria@gmail.com','Rosa27','Patito123','Usuario')");
+        db.execSQL("INSERT OR IGNORE INTO usuarios (cedula ,nombre ,apellidos ,email ,usuario ,contraseña ,rol) Values (72800744,'Paula','Villegas Mora','pau@gmail.com','Paula01','pau123','Usuario')");
         db.close();
 
     }
 
-    public boolean exiteusuario(String usuario, String contrasena) {
+    public boolean existeusuario(String correo, String contrasena) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from usuarios where usuario=? and  contraseña=?", new String[]{usuario, contrasena});
-        if (cursor.getCount() > 0){
+        Cursor cursor = db.rawQuery("select * from usuarios where email=? and  contraseña=?", new String[]{correo, contrasena});
+        if (cursor.getCount() > 0) {
             return true;
-        }
-
-          else{
-              db.close();
-        }
-
-            return false;
-    }
-
-
-    public boolean tipousuario(String usuario) {
-
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select  rol  from usuarios where usuario=?", new String[]{usuario});
-
-
-        if (cursor.moveToFirst()) {
-            if (cursor.getString(cursor.getColumnIndexOrThrow("rol")).equals("Administrador"))
-
-                return  true;
-
-
-        }else{
+        } else {
             db.close();
         }
-
-
         return false;
     }
 
+    public boolean tipousuario(String correo) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select  rol  from usuarios where correo=?", new String[]{correo});
 
-
-
-
+        if (cursor.moveToFirst()) {
+            if (cursor.getString(cursor.getColumnIndexOrThrow("rol")).equals("Administrador"))
+                return true;
+        } else {
+            db.close();
+        }
+        return false;
+    }
 
 }

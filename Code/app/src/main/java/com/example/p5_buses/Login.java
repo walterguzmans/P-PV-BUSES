@@ -7,64 +7,46 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
     Conexion conexion;
-    private EditText et1usuario, et2contraseña;
-    String usuario,contraseña;
+    private EditText et1correo, et2contraseña;
+    String correo,contraseña;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        et1usuario = findViewById(R.id.et1usuario);
-        et2contraseña = findViewById(R.id.et2contraseña);
+        setContentView(R.layout.activity_login);
+        et1correo = findViewById(R.id.txtcorreo);
+        et2contraseña = findViewById(R.id.txtcontraseña);
         conexion = new Conexion(this);
         conexion.registrousuarios();
 
     }
 
     public void ingresar(View view) {
-
-        usuario = et1usuario.getText().toString();
+        correo = et1correo.getText().toString();
         contraseña = et2contraseña.getText().toString();
 
-
-        if (usuario == null || "".equals(contraseña)) {
-
-            Toast.makeText(this, "campos invalidos", Toast.LENGTH_SHORT).show();
-
+        if (correo == null || "".equals(contraseña)) {
+            Toast.makeText(this, "Campos invalidos", Toast.LENGTH_SHORT).show();
         } else {
-
-            boolean existe = conexion.exiteusuario(usuario, contraseña);
-
+            boolean existe = conexion.existeusuario(correo, contraseña);
             if (existe) {
-                boolean tipousuario = conexion.tipousuario(usuario);
-
+                boolean tipousuario = conexion.tipousuario(correo);
                 if (tipousuario) {
- //ingresar ventana administrador
+                    //ingresar ventana administrador
                     Toast.makeText(this, "Bienvenido administrador", Toast.LENGTH_SHORT).show();
-
                 } else {
-//ingresar venta usuario
+//ingresar ventana usuario
                     Toast.makeText(this, "Bienvenido usuario", Toast.LENGTH_SHORT).show();
-
                 }
-
-
             } else {
                 Toast.makeText(this, "credenciales incorrectos", Toast.LENGTH_SHORT).show();
             }
-
-
         }
-        et1usuario.setText("");
+        et1correo.setText("");
         et2contraseña.setText("");
 
     }
-
-
-
-
 }
-
