@@ -24,6 +24,8 @@ public class Login extends AppCompatActivity {
         et2contraseña = findViewById(R.id.txtcontraseña);
 
        this.registrousuarios();
+        Intent intent = new Intent(Login.this, MenuAdmin.class);
+        startActivity(intent);
 
     }
 
@@ -56,7 +58,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void registrousuarios() {  // insercion de usuarios
-        Conexion conexion = new Conexion(this,"Proyecto",null,1);
+        Conexion conexion = new Conexion(this);
         SQLiteDatabase db = conexion.getReadableDatabase();
 
         db.execSQL("INSERT OR IGNORE INTO  usuarios  (cedula ,nombre ,apellidos ,email ,usuario ,contraseña ,rol ) Values (70280733,'Keisy','Avalos Artavia','kavalosartavia@gmail.com','Keisy31','Camino123','Administrador')");
@@ -66,7 +68,7 @@ public class Login extends AppCompatActivity {
     }
 
     public boolean existeusuario(String correo, String contrasena) {
-        Conexion conexion = new Conexion(this,"Proyecto",null,1);
+        Conexion conexion = new Conexion(this);
         SQLiteDatabase db =conexion.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from usuarios where email=? and  contraseña=?", new String[]{correo, contrasena});
         if (cursor.getCount() > 0) {
@@ -78,7 +80,7 @@ public class Login extends AppCompatActivity {
     }
 
     public boolean tipousuario(String correo) {
-        Conexion conexion = new Conexion(this,"Proyecto",null,1);
+        Conexion conexion = new Conexion(this);
         SQLiteDatabase db =conexion.getReadableDatabase();
 
         Cursor cursor = db.rawQuery("select  rol  from usuarios where email=?", new String[]{correo});
