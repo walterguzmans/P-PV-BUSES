@@ -117,4 +117,12 @@ public class UsuariosBD {
         }
 
     }
+
+
+
+    public void registro() {
+        SQLiteDatabase baseDeDatos = conexion.getWritableDatabase();
+        baseDeDatos.execSQL("INSERT OR IGNORE INTO  usuarios  (cedula ,nombreCompleto,telefono ,email ,contraseña ,rol ) Values (70280733,'Usuarioadmin',+50689233947,'admin@gmail.com','admin123','Administrador')");
+
+    }
 }

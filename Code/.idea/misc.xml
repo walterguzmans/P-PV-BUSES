@@ -3,17 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/50689/Documents/Proyecto/P-PV-BUSES/Code/app/src/main/res/layout/activity_crud_usuarios.xml" value="0.25" />
+        <entry key="..\:/Users/50689/Documents/Proyecto/P-PV-BUSES/Code/app/src/main/res/layout/activity_lista_usuarios.xml" value="0.25" />
+        <entry key="..\:/Users/50689/Documents/Proyecto/P-PV-BUSES/Code/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/50689/Documents/Proyecto/P-PV-BUSES/Code/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/HP/Documents/GitHub/P-PV-BUSES/Code/app/src/main/res/layout/activity_crud_usuarios.xml" value="0.2" />
-        <entry key="..\:/Users/HP/Documents/GitHub/P-PV-BUSES/Code/app/src/main/res/layout/activity_lista_usuarios.xml" value="0.2" />
-        <entry key="..\:/Users/HP/Documents/GitHub/P-PV-BUSES/Code/app/src/main/res/layout/fila_usuario.xml" value="0.2" />
+        <entry key="..\:/Users/50689/Documents/Proyecto/P-PV-BUSES/Code/app/src/main/res/layout/activity_menu_admin.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/50689/Documents/Proyecto/P-PV-BUSES/Code/app/src/main/res/layout/activity_menu_usuario.xml" value="0.25" />
+        <entry key="..\:/Users/50689/Documents/Proyecto/P-PV-BUSES/Code/app/src/main/res/layout/fila_usuario.xml" value="0.25" />
         <entry key="..\:/Users/keysi/AndroidStudioProjects/P-PV-BUSES/Code/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1835" />
         <entry key="..\:/Users/keysi/AndroidStudioProjects/P-PV-BUSES/Code/app/src/main/res/drawable/cursor_color.xml" value="0.1835" />
         <entry key="..\:/Users/keysi/AndroidStudioProjects/P-PV-BUSES/Code/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1835" />
         <entry key="..\:/Users/keysi/AndroidStudioProjects/P-PV-BUSES/Code/app/src/main/res/layout/activity_login.xml" value="0.14" />
         <entry key="..\:/Users/keysi/AndroidStudioProjects/P-PV-BUSES/Code/app/src/main/res/layout/activity_menu.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/keysi/AndroidStudioProjects/P-PV-BUSES/Code/app/src/main/res/layout/activity_menu_usuario.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/yulis/OneDrive/Documentos/GitHub/P-PV-BUSES/Code/app/src/main/res/layout/activity_crud_usuarios.xml" value="0.17074275362318841" />
       </map>
     </option>
   </component>
