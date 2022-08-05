@@ -60,4 +60,39 @@ public class UsuariosBD {
         }
         return false;
     }
+    public void buscarUsuario(DatosUsuarios usuario,int cedula){
+        SQLiteDatabase baseDeDatos = conexion.getWritableDatabase();
+
+        if(baseDeDatos!=null){
+            Cursor cursor = baseDeDatos.rawQuery("Select * from usuarios where cedula='"+cedula+"'",null);
+            if(cursor.moveToFirst()){
+                do{
+                    usuario.setNombreCompleto(cursor.getString(1));
+                    usuario.setTelefono(cursor.getInt(2));
+                    usuario.setEmail(cursor.getString(3));
+                    usuario.setContrasena(cursor.getString(4));
+                    usuario.setRol(cursor.getString(5));
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    public List<DatosUsuarios> mostrarusuarios(){
+
+        SQLiteDatabase baseDeDatos = conexion.getWritableDatabase();
+        Cursor cursor = baseDeDatos.rawQuery("Select * from usuarios ",null);
+        List<DatosUsuarios> usuarios = new ArrayList<>();
+        if(cursor.moveToFirst()){
+            do{
+                usuarios.add(new DatosUsuarios(cursor.getString(cursor.getColumnIndexOrThrow("nombreCompleto")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("email")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("contraseña")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("rol")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("telefono")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("cedula"))));
+
+            }while(cursor.moveToNext());
+        }
+        return usuarios;
+    }
 }

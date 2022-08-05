@@ -60,4 +60,20 @@
         android:layout_height="wrap_content"
         android:onClick="agregarUsuario"
         android:text="Button" />
+
+    <Button
+        android:id="@+id/btnbuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buscar"
+        android:text="Buscar" />
+
+    <Button
+        android:id="@+id/btnmostrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="irLista"
+        android:text="Motrar" />
+
+
 </LinearLayout>
