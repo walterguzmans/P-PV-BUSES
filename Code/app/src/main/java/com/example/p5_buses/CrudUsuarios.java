@@ -79,8 +79,6 @@ public class CrudUsuarios extends AppCompatActivity {
     }
 
         public void modificarUsuario(View view) {
-
-
         if( telefono.getText().toString().length()==0 || cedula.getText().toString().length()==0 || nombre.getText().toString().isEmpty()  || email.getText().toString().isEmpty() || contrasena.getText().toString().isEmpty()) {
             Toast.makeText(this, "Debe llenar todos los campos", Toast.LENGTH_SHORT).show();
         }else {
@@ -105,6 +103,26 @@ public class CrudUsuarios extends AppCompatActivity {
             contrasena.setText("");
             spinner1.setSelected(Boolean.parseBoolean(""));
         }
+    }
+    public void eliminarUsuario(View view) {
+
+        if( telefono.getText().toString().length()==0 || cedula.getText().toString().length()==0 || nombre.getText().toString().isEmpty()  || email.getText().toString().isEmpty() || contrasena.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Debe llenar todos los campos", Toast.LENGTH_SHORT).show();
+        }else {
+            if (usuariosBD.eliminarUsuario(Integer.parseInt(cedula.getText().toString()))) {
+                Toast.makeText(this, "Usuario eliminado con exito", Toast.LENGTH_SHORT).show();
+                cedula.setText("");
+            } else {
+                Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show();
+            }
+        }
+        cedula.setText("");
+        nombre.setText("");
+        telefono.setText("");
+        email.setText("");
+        contrasena.setText("");
+        spinner1.setSelected(Boolean.parseBoolean(""));
+
     }
 
     public void irLista(View view) {

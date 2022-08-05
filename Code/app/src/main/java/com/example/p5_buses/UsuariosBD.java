@@ -106,4 +106,15 @@ public class UsuariosBD {
         }
         return usuarios;
     }
+    public boolean eliminarUsuario(int cedula) {
+        SQLiteDatabase baseDeDatos = conexion.getWritableDatabase();
+        String[] argumentos = {String.valueOf(cedula)};
+        int cant = baseDeDatos.delete("usuarios", "cedula = ?", argumentos);
+        if(cant == 1){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }
