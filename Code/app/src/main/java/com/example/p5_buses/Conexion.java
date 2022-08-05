@@ -15,16 +15,20 @@ public class Conexion extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {  //creacion de tabla usuario
-        db.execSQL("create table usuarios(cedula int primary key, nombreCompleto text, telefono int,email text,contraseña text,rol text)");
-
+    public void onCreate(SQLiteDatabase db) {  //creacion de tablas
+        db.execSQL("create table usuarios(cedula int primary key,nombre text,apellidos text,email text,usuario text,contraseña text,rol text)");
+        db.execSQL("create table Estudiante(cedula int primary key,nombre text,apellidos text,dierrcion text,telefono int, estado text)");
     }
+
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS usuarios");
+        db.execSQL("DROP TABLE IF EXISTS estudante");
         db.close();
 
     }
+
 
 
 

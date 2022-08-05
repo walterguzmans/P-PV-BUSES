@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#039708"
+    tools:context=".CrudUsuarios">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Crear carnet"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="-80dp"
+        android:layout_marginRight="-80dp"
+        android:layout_marginBottom="-80dp"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <EditText
+            android:id="@+id/etCedula"
+            android:layout_width="281dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Cédula"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="82dp"
+            android:layout_marginLeft="65dp"
+            android:inputType="textPersonName"
+            android:hint="Nombre completo" />
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="132dp"
+            android:hint="Número telefónico" />
+
+        <EditText
+            android:id="@+id/etDireccion"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="183dp"
+            android:ems="10"
+            android:hint="Direccion "
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/etEstado"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="235dp"
+            android:ems="10"
+            android:hint="Estado de Beca"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/btnCrear"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="390dp"
+            android:background="@drawable/green_fill__rounded_color"
+            android:fontFamily="@font/comfortaa_light"
+            android:gravity="center"
+            android:onClick="agregarCarnet"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="Crear Carnet"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
