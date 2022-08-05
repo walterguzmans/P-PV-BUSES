@@ -76,6 +76,17 @@ public class UsuariosBD {
             }
         }
     }
+       public int actualizar(DatosUsuarios usuario) {
+        SQLiteDatabase baseDeDatos = conexion.getWritableDatabase();
+        ContentValues valoresParaActualizar = new ContentValues();
+        valoresParaActualizar.put("cedula", usuario.getCedula());
+        valoresParaActualizar.put("nombreCompleto", usuario.getNombreCompleto());
+        valoresParaActualizar.put("telefono", usuario.getTelefono());
+        valoresParaActualizar.put("email", usuario.getEmail());
+        valoresParaActualizar.put("contraseña", usuario.getContrasena());
+        valoresParaActualizar.put("rol", usuario.getRol());
+        return baseDeDatos.update("usuarios", valoresParaActualizar, "cedula= ?", new String[]{String.valueOf(usuario.getCedula())});
+    }
 
     public List<DatosUsuarios> mostrarusuarios(){
 
