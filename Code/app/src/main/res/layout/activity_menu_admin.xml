@@ -134,6 +134,7 @@
             android:layout_height="68dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="237dp"
+            android:onClick="irMantenimientoUsuarios"
             app:cardCornerRadius="50dp">
 
 
@@ -236,9 +237,9 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="1dp"
                     android:fontFamily="@font/comfortaa_light"
-                    android:text="Consulta uso de beca"
+                    android:text="Historial"
                     android:textColor="@color/white"
-                    android:textSize="19dp">
+                    android:textSize="21dp">
 
                 </TextView>
 

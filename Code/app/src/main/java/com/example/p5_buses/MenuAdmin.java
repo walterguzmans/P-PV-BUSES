@@ -13,9 +13,8 @@ public class MenuAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_admin);
     }
-    public void CrearCarnet(View view){
-        Intent intent = new Intent(MenuAdmin.this, CrudCrearCarnet.class);
+    public void irMantenimientoUsuarios(View view) {
+        Intent intent = new Intent(MenuAdmin.this, CrudUsuarios.class);
         startActivity(intent);
-
     }
 }
